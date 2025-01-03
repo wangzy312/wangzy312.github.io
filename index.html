@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziyue Wang's Homepage</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9; /* Light gray background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        aside {
+            width: 30%; /* Adjusted width for more space */
+            background-color: #eaeaea; /* Gray sidebar */
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 1rem; /* Spacing between sidebar and main content */
+        }
+        /* 设置 main 的基础样式 */
+        main {
+            padding: 2rem;
+            background-color: #fff; /* 白色背景 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
+        }
+
+        /* 统一 section 标题样式 */
+        main h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ddd; /* 下划线分隔 */
+            padding-bottom: 0.5rem;
+        }
+
+        /* 统一 section 内容样式 */
+        main p,
+        main ul,
+        main ol {
+            margin: 0 0 1rem;
+            line-height: 1.6; /* 适当的行高，确保易读性 */
+        }
+
+        /* 统一 section 内的链接样式 */
+        main a {
+            text-decoration: none;
+            color: #0366d6; /* GitHub 链接的颜色 */
+        }
+
+        main a:hover {
+            color: #005ea2; /* 悬停时更深的蓝色 */
+            text-decoration: underline;
+        }
+
+        /* 统一 Publications 列表样式 */
+        #publications ol {
+            padding-left: 1.5rem; /* 缩进 */
+            margin: 0;
+        }
+
+        #publications li {
+            margin: 0.5rem 0;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            main h2 {
+                font-size: 1.4rem;
+                padding-bottom: 0.4rem;
+            }
+
+            main p,
+            main ul,
+            main ol {
+                margin: 0 0 0.8rem;
+            }
+        }
+        .profile-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .profile-info h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            color: #4a4a4a; /* Dark gray heading */
+        }
+        .profile-info p {
+            margin: 0.5rem 0 1rem;
+            color: #777; /* Light gray text */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0.5rem 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #777; /* Light gray links */
+            font-weight: bold;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #4a4a4a; /* Dark gray headings */
+        }
+        .education-item {
+            margin-bottom: 1rem;
+        }
+        .education-item h3 {
+            margin-top: 0;
+        }
+        .education-item p {
+            margin: 0.5rem 0;
+        }
+        .mentor-info {
+            margin-top: 1rem;
+        }
+        .mentor-info a {
+            color: #0073bb; /* Blue link for mentor */
+            font-weight: bold;
+        }
+        .contact-social-links {
+            margin-bottom: 2rem;
+        }
+        .contact-social-links h3 {
+            margin-top: 0;
+        }
+        .contact-social-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .contact-social-links ul li {
+            margin: 0.5rem 0;
+        }
+        .contact-social-links a {
+            text-decoration: none;
+            color: #0366d6; /* Light gray links */
+        }
+        .wechat-link {
+            position: relative;
+            cursor: pointer;
+        }
+        .wechat-qrcode {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .wechat-qrcode img {
+            max-width: 200px;
+            max-height: 200px; /* 设置最大高度 */
+            border: 1px solid #ddd;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            aside {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+        }
+        #publications {
+            margin-bottom: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="profile-info">
+                <h1>Ziyue Wang</h1>
+                <h1>王子岳</h1>
+                <p>Ph.D. Student at Academy of Mathematics and System Science, Chinese Academy of Sciences</p>
+            </div>
+            
+            <section class="contact-social-links">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>ziyuewang@lsec.cc.ac.cn</a></li>
+                    <li><a href="https://scholar.google.com/citations?user=MjpRSzAAAAAJ" target="_blank">Google Scholar</a></li>
+                    <li class="wechat-link">
+                        <a href="#">WeChat</a>
+                        <div class="wechat-qrcode">
+                            <img src="img/wechat-qrcode.jpg" alt="WeChat QR Code">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Ziyue Wang is currently pursuing the Ph.D. degree with the Institute of Computational Mathematics and Scientific/Engineering Computing at the Academy of Mathematics and Systems Science, Chinese Academy of Sciences, Beijing, China.
+                He is supervised by <a href="https://lsec.cc.ac.cn/~yafliu/index.html" target="_blank" rel="noopener noreferrer">Prof. Ya-Feng Liu</a> and is a member of 
+                <a href="https://lsec.cc.ac.cn/~optim/" target="_blank" rel="noopener noreferrer">Optimization Group</a>.
+                His research interests include optimization algorithm and its applications to signal processing and wireless communications, massive random access in massive machine-type communications.
+                </p>
+            </section>
+
+            
+            
+
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Ph.D. in Computational Mathematics</h3>
+                    <p>Academy of Mathematics and System Science, Chinese Academy of Sciences, Beijing, China</p>
+                    <p>Year: 2020 - Present</p>
+                    <p>Honors: Special Prize of CAS Presidential Scholarship</p>
+                </div>
+                <div class="education-item">
+                    <h3>B.Sc. in Information and Computing Science</h3>
+                    <p>Beijing Institute of Technology, Beijing, China</p>
+                    <p>Year: 2016 - 2020</p>
+                    <p>Honors: National Scholarship</p>
+                </div>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <ol>
+                    <li>
+                        <strong>Ziyue Wang</strong>, Ya-Feng Liu, Zhaorui Wang, and Wei Yu, 
+                        Covariance-Based Activity Detection in Cooperative Multi-Cell Massive MIMO: Scaling Law and Efficient Algorithms,
+                        <em>IEEE Transactions on Information Theory</em>, 2024. 
+                        [<a href="https://doi.org/10.1109/TIT.2024.3470952" target="_blank" rel="noopener noreferrer">DOI</a>]
+                        [<a href="https://arxiv.org/abs/2311.15299" target="_blank" rel="noopener noreferrer">arXiv</a>]
+                    </li>
+
+                    <li>
+                        <strong>Ziyue Wang</strong>, Yang Li, Ya-Feng Liu, and Junjie Ma, 
+                        Covariance-Based Device Activity Detection with Massive MIMO for Near-Field Correlated Channels, 2024.
+                        [<a href="https://arxiv.org/abs/2411.05492" target="_blank" rel="noopener noreferrer">arXiv</a>]
+                    </li>
+
+                    <li>
+                        <strong>Ziyue Wang</strong>, Ya-Feng Liu, Zhaorui Wang, and Wei Yu,
+                        Scaling Law Analysis for Covariance Based Activity Detection in Cooperative Multi-Cell Massive MIMO,
+                        in <em>Proc. IEEE ICASSP</em>, 2023.
+                        [<a href="https://doi.org/10.1109/ICASSP49357.2023.10096461" target="_blank" rel="noopener noreferrer">DOI</a>]
+                        [<a href="https://arxiv.org/abs/2210.14688" target="_blank" rel="noopener noreferrer">arXiv</a>]
+                    </li>
+                    
+                    <li>
+                        <strong>Ziyue Wang</strong>, Ya-Feng Liu, Zhilin Chen, and Wei Yu,
+                        Accelerating Coordinate Descent via Active Set Selection for Device Activity Detection for Multi-Cell Massive Random Access,
+                        in <em>Proc. IEEE SPAWC</em>, 2021.
+                        [<a href="https://doi.org/10.1109/SPAWC51858.2021.9593150" target="_blank" rel="noopener noreferrer">DOI</a>]
+                        [<a href="https://arxiv.org/abs/2104.12984" target="_blank" rel="noopener noreferrer">arXiv</a>]
+                    </li>
+
+                    <li>
+                        <strong>Ziyue Wang</strong>, Zhilin Chen, Ya-Feng Liu, Foad Sohrabi, and Wei Yu,
+                        An Efficient Active Set Algorithm for Covariance Based Joint Data and Activity Detection for Massive Random Access with Massive MIMO,
+                        in <em>Proc. IEEE ICASSP</em>, 2021.
+                        [<a href="https://doi.org/10.1109/ICASSP39728.2021.9413525" target="_blank" rel="noopener noreferrer">DOI</a>]
+                        [<a href="https://arxiv.org/abs/2102.03490" target="_blank" rel="noopener noreferrer">arXiv</a>]
+                    </li>
+
+                    <li>
+                        Zhaorui Wang, Ya-Feng Liu, <strong>Ziyue Wang</strong>, Liang Liu, Haoyuan Pan, and Shuguang Cui,
+                        Device Activity Detection in mMTC with Low-Resolution ADCs: A New Protocol,
+                        <em>IEEE Transactions on Wireless Communications</em>, 2024. 
+                        [<a href="https://doi.org/10.1109/TWC.2023.3328657" target="_blank" rel="noopener noreferrer">DOI</a>]
+                        [<a href="https://arxiv.org/abs/2304.05119" target="_blank" rel="noopener noreferrer">arXiv</a>]
+                    </li>
+
+                    <li>
+                        Ya-Feng Liu, Wei Yu, <strong>Ziyue Wang</strong>, Zhilin Chen, and Foad Sohrabi,
+                        Grant-Free Random Access via Covariance-Based Approach,
+                        in <em>Next Generation Multiple Access</em>, Wiley, 2024. 
+                        [<a href="https://doi.org/10.1002/9781394180523.ch16" target="_blank" rel="noopener noreferrer">DOI</a>]
+                    </li>
+
+                    
+                </ol>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.wechat-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const qrcode = this.querySelector('.wechat-qrcode');
+                if (qrcode.style.display === 'none' || qrcode.style.display === '') {
+                    qrcode.style.display = 'block';
+                } else {
+                    qrcode.style.display = 'none';
+                }
+            });
+        });
+
+        // Close the QR code when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.wechat-link')) {
+                document.querySelectorAll('.wechat-qrcode').forEach(qrcode => {
+                    qrcode.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
